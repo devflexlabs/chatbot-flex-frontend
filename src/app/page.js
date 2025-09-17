@@ -25,7 +25,7 @@ export default function Page() {
     {
       sender: 'bot',
       content:
-        'Olá! Sou seu assistente para análise da planilha de clientes.\n\n' +
+        'Olá! Sou o Flequinho, o assistente do Cadastro Único.\n\n' +
         '• Buscar informações de clientes específicos\n' +
         '• Mostrar estatísticas gerais\n' +
         '• Analisar endereços e casos\n' +
