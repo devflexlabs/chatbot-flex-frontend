@@ -8,7 +8,7 @@ import {
   Loader2
 } from 'lucide-react';
 
-const PY_API_BASE = 'http://127.0.0.1:5000';
+const PY_API_BASE = 'https://backeend-ia-cu-production.up.railway.app';
 
 export default function Page() {
   const [messages, setMessages] = useState([
