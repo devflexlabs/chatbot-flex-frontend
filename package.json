@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "backend:setup": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"cd .\\backend; if (!(Test-Path .venv)) { python -m venv .venv }; . .\\.venv\\Scripts\\Activate.ps1; pip install --upgrade pip; pip install flask flask-cors openai pandas\"",
+    "backend:dev": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"cd .\\backend; if (!(Test-Path .venv)) { python -m venv .venv }; . .\\.venv\\Scripts\\Activate.ps1; python .\\backendpython.py\"",
+    "dev:all": "concurrently -k -n BACKEND,FRONTEND -c yellow,cyan \"npm:backend:dev\" \"next dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -21,6 +24,7 @@
     "@types/react": "19.1.13",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
+    "concurrently": "^9.1.2",
     "tailwindcss": "^4"
   }
 }
