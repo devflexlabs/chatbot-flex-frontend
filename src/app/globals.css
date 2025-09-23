@@ -22,3 +22,76 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+/* Spinner animation used by Loader2 icon */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Scrollbar discreta para o chat, similar ao ChatGPT */
+.chat-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px; /* afasta a barra do conteúdo */
+}
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.08) transparent;
+  scrollbar-gutter: stable both-edges; /* mantem espaço reservado no lado direito */
+}
+
+/* Design tokens: Light (root) and Dark (.theme-dark) */
+:root {
+  --bg: #F7F9FC;
+  --card: #FFFFFF;
+  --stroke: #E5E7EB;
+  --text: #111827;
+  --text-muted: #374151;
+  --primary: #4C8DFF;
+  --primary-600: #3A82F7;
+  --accent: #22C55E;
+}
+.theme-dark {
+  --bg: #0F1012;
+  --card: #15171A;
+  --stroke: #26282C;
+  --text: #E5E7EB;
+  --text-muted: #9CA3AF;
+  --primary: #4C8DFF;
+  --primary-600: #3A82F7;
+  --accent: #22C55E;
+}
+
+/* Helpers to use tokens with Tailwind arbitrary values */
+.token-bg { background: var(--bg); }
+.token-card { background: var(--card); }
+.token-stroke { border-color: var(--stroke); }
+.token-text { color: var(--text); }
+.token-text-muted { color: var(--text-muted); }
+.token-primary { color: var(--primary); }
+.token-ring { outline: 2px solid color-mix(in oklab, var(--primary) 40%, transparent); }
+
+/* Smooth theme transition */
+* { transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+
+/* Placeholder color synced with theme tokens */
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+  transition: color .2s ease;
+}
+/* Vendor prefixes to ensure broad support */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder { color: var(--text-muted); opacity: 0.7; }
+input::-moz-placeholder,
+textarea::-moz-placeholder { color: var(--text-muted); opacity: 0.7; }
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder { color: var(--text-muted); opacity: 0.7; }
