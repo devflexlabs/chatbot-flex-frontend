@@ -9,8 +9,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Meu App Next",
-  description: "Aplicação com fonte Poppins",
+  title: "Flex IA",
+  description: "IA do Grupo Flex com consultas e insights.",
 };
 
 export default function RootLayout({ children }) {
